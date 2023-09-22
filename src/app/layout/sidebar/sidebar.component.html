@@ -1,0 +1,41 @@
+<div class="flex flex-col justify-between h-full">
+  <mat-list>
+  <mat-list-item routerLink="{{routes.DASHBOARD}}" routerLinkActive="active">
+    <div class="flex items-center">
+      <mat-icon>dashboard</mat-icon> <span>Dashboard</span>
+    </div>
+  </mat-list-item>
+  <mat-list-item routerLink="/case-management" routerLinkActive="active">
+    <div class="flex items-center"><mat-icon>apps</mat-icon> Case Management</div>    
+  </mat-list-item>
+  <mat-list-item routerLink="/homeless-user" routerLinkActive="active">
+    <div class="flex items-center"><mat-icon>group</mat-icon> Users</div>    
+  </mat-list-item>
+  <mat-list-item routerLink="/organization" routerLinkActive="active">
+    <div class="flex items-center"><mat-icon>account_balance</mat-icon> Organizations</div>    
+  </mat-list-item>
+  <mat-list-item routerLink="/cabin-management" routerLinkActive="active">
+    <div class="flex items-center"><mat-icon>holiday_village</mat-icon> Cabin Management</div>    
+  </mat-list-item>
+</mat-list>
+
+<div class="bg-gray-50">
+  <p class="sidebar-title">Help</p>
+
+<mat-list>
+  <a href="https://flatlogic.com/forum/" target="_blank" style="text-decoration: none;">
+    <mat-list-item>
+      <div class="flex items-center"><mat-icon>question_answer</mat-icon> Support</div>      
+    </mat-list-item>
+  </a>
+  <a href="https://flatlogic.com/forum" target="_blank" style="text-decoration: none;">
+    <mat-list-item>
+      <div class="flex items-center"><mat-icon>help_outline</mat-icon> FAQ</div>
+    </mat-list-item>
+  </a>
+</mat-list>
+</div>
+
+
+
+</div>
