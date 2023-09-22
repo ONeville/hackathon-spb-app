@@ -6,6 +6,8 @@
     "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "deploy": "aws s3 cp dist/springboard-collaborative/ s3://spb-collaborative-app --recursive",
+    "ci": "npm run build && npm run deploy",
     "test": "ng test"
   },
   "private": true,
