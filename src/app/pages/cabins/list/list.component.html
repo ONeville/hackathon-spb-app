@@ -1,0 +1,45 @@
+
+    <table class="employee-table__table" mat-table [dataSource]="dataSource">
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="cabinId" >
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef > Cabin # </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.cabinId}} </td>
+      </ng-container>
+
+      <!-- Company Column -->
+      <ng-container matColumnDef="location">
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef> Location </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.location}} </td>
+      </ng-container>
+
+      <!-- City Column -->
+      <ng-container matColumnDef="city">
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef> City </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container>
+
+      <!-- State Column -->
+      <ng-container matColumnDef="site">
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef> Site </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.site}} </td>
+      </ng-container>
+      
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="action">
+        <th class="employee-table__table-checkbox" mat-header-cell *matHeaderCellDef>
+          Actions
+        </th>
+        <td class="employee-table__table-checkbox" mat-cell *matCellDef="let row">
+         <mat-icon class="employee-table-wrapper__icon">edit</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+          (click)="selection.toggle(row)">
+      </tr>
+    </table>
+  <div class="pagination">
+    <mat-paginator [pageSizeOptions]="[10, 15, 100]" showFirstLastButtons></mat-paginator>
+  </div>

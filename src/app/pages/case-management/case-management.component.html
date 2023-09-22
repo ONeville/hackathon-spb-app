@@ -1,8 +1,30 @@
-<!-- <p>case-management works!</p> -->
-  <mat-toolbar class="page-header" role="heading">
-    <h1>case-management works!</h1>
-  </mat-toolbar>
+<h1 class="pb-4">Case Management</h1>
 
-  skkd
-
-  dd
+<mat-card class="employee-table-wrapper">
+  <mat-card-title>
+<div  class="flex justify-between px-8 pt-10 pb-2 border-b">
+        <p *ngIf="!isShowFilterInput" class="employee-table-wrapper__title">Cabin List</p>
+    <div *ngIf="isShowFilterInput" class="employee-table-wrapper__search">
+      <div class="employee-table-wrapper__icon-wrapper">
+        <mat-icon class="employee-table-wrapper__icon">search</mat-icon>
+      </div>
+      <input matInput class="employee-table-wrapper__search-input" (keyup)="applyFilter($event)">
+      <button class="employee-table-wrapper__button" mat-mini-fab (click)="showFilterInput()">
+        <mat-icon class="employee-table-wrapper__icon">close</mat-icon>
+      </button>
+    </div>
+<div class="flex items-center gap-5">
+        <button class="flex items-center gap-2" mat-raised-button color="primary" type="button" (click)="addNew()">
+      <mat-icon class="employee-table-wrapper__icon">add</mat-icon> New
+    </button>
+    <button class="employee-table-wrapper__button" mat-mini-fab (click)="showFilterInput()">
+      <mat-icon class="employee-table-wrapper__icon">search</mat-icon>
+    </button>
+</div>
+</div>
+  </mat-card-title>
+  <mat-card-content class="employee-table__content">
+    
+        <app-case-table [data]="cases" />
+  </mat-card-content>
+</mat-card>

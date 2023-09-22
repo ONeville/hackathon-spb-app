@@ -1,3 +1,4 @@
 export * from './models/user';
 export * from './services/auth.service';
 export * from './models/routes';
+export * from './models/case';

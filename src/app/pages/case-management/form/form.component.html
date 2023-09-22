@@ -1,0 +1,22 @@
+<h2 class="pl-10 py-10 font-semibold text-lg">Add New Case</h2>
+<div class="px-10 mb-20">
+  <form class="flex flex-col gap-1">
+
+  <mat-form-field class="w-full" appearance="fill">
+    <mat-label>caseId#</mat-label>
+    <input matInput placeholder="case ID" [(ngModel)]="case.caseId" name="caseId" required>
+  </mat-form-field>
+
+  <mat-form-field class="w-full" appearance="fill">
+    <mat-label>status</mat-label>
+    <input matInput placeholder="status" [(ngModel)]="case.status" name="status" required>
+  </mat-form-field>
+
+  <mat-form-field class="w-full" appearance="fill">
+    <mat-label>Comments</mat-label>
+    <input matInput placeholder="Comments" [(ngModel)]="case.comments" name="comments" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="submitForm()">Submit</button>
+</form>
+</div>

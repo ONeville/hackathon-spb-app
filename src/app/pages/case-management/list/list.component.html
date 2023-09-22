@@ -1,0 +1,60 @@
+
+    <table class="employee-table__table" mat-table [dataSource]="dataSource">
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="caseId" >
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef > caseId # </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.caseId}} </td>
+      </ng-container>
+
+      <!-- Company Column -->
+      <ng-container matColumnDef="createdDate">
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef> createdDate </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+      </ng-container>
+
+      <!-- City Column -->
+      <ng-container matColumnDef="status">
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef> status </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+      <!-- State Column -->
+      <ng-container matColumnDef="requestUserName">
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef> requestUserName </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.requestUserName}} </td>
+      </ng-container>
+      <!-- State Column -->
+      <ng-container matColumnDef="servicesName">
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef> servicesName </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.servicesName}} </td>
+      </ng-container>
+      <!-- State Column -->
+      <ng-container matColumnDef="cabin">
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef> cabin </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.cabin}} </td>
+      </ng-container>
+      <!-- State Column -->
+      <ng-container matColumnDef="comments">
+        <th class="employee-table__table-header" mat-header-cell *matHeaderCellDef> comments </th>
+        <td class="employee-table__table-body" mat-cell *matCellDef="let element"> {{element.comments}} </td>
+      </ng-container>
+      
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="action">
+        <th class="employee-table__table-checkbox" mat-header-cell *matHeaderCellDef>
+          Actions
+        </th>
+        <td class="employee-table__table-checkbox" mat-cell *matCellDef="let row">
+         <mat-icon class="employee-table-wrapper__icon">edit</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+          (click)="selection.toggle(row)">
+      </tr>
+    </table>
+  <div class="pagination">
+    <mat-paginator [pageSizeOptions]="[10, 15, 100]" showFirstLastButtons></mat-paginator>
+  </div>
